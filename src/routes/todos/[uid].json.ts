@@ -5,3 +5,9 @@ import { api } from "./_api"
 export const del: RequestHandler = (request) => {
     return api(request)
 }
+
+export const patch: RequestHandler<{}, FormData> = (request) => {
+    return api(request, {
+        text: request.body.get("text")
+    })
+}
